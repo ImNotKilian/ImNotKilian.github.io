@@ -1,0 +1,172 @@
+<section class="photo" id="inicio">
+  
+    <div class="nav" id="sticker">
+    <label for="toggle">&#9776</label>
+    <input type="checkbox" id="toggle" />
+    <div class="menu">
+      <h5 class="logo">KILIAN</h5>
+      <a href="#inicio">inicio</a>
+      <a href="#servicio">servicios</a>
+      <a href="#trabajo">trabajo</a>
+      <a href="#contacto">contacto</a>
+    </div>
+  </div>
+    <div class="photo-text">
+    <h4 data-ix="skype">Portafolio</h4>
+    <p data-ix="subtitle-hero-up">Bienvenidos a mi portafolio, donde econtrarán la mágia de la programación.</p>
+      </div>
+    <div class="overlay"></div>
+  </section>
+  <section class="content">
+    <div class="grand-title" id="servicio">
+      <h4 data-ix="slowfade-scroll-bigs">Algunos lenguajes en los que me especializo...</h4>
+    </div>
+    <div class="text">
+      <div class="inner-text">
+        <h3 data-ix="slowfade-scroll-bigs">Python</h3>
+        <i class="ic ion-fork"></i>
+        <div class="text-box">
+          <h5 data-ix="slowfade-scroll-bigs">genialidea</h5>
+          <p data-ix="slowfade-scroll-bigs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, modi!</p>
+        </div>
+      </div>
+      <div class="inner-text">
+        <h3 data-ix="slowfade-scroll-bigs">HTML5</h3>
+        <i class="ic ion-knife"></i>
+        <div class="text-box">
+          <h5 data-ix="slowfade-scroll-bigs">genialidea</h5>
+          <p data-ix="slowfade-scroll-bigs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, modi!</p>
+        </div>
+      </div>
+      <div class="inner-text">
+        <h3 data-ix="slowfade-scroll-bigs">C++</h3>
+        <i class="ic ion-spoon"></i>
+        <div class="text-box">
+          <h5 data-ix="slowfade-scroll-bigs">genialidea</h5>
+          <p data-ix="slowfade-scroll-bigs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, modi!</p>
+        </div>
+      </div>
+    </div>
+  
+    <section class="portafolio" id="trabajo">
+      <h4 data-ix="slowfade-scroll-bigs">Trabajos</h4>
+      <div class="portafolio-container">
+        <section class="portafolio-item">
+          <img src="https://supercpps.com/novedades/wp-content/uploads/2019/12/miniatura.png" alt="" class="portafolio-img" />
+          <section class="portafolio-text">
+            <h5>Club Penguin</h5>
+            <p>Club Penguin fue un videojuego multijugador en línea, implicando un mundo virtual que contenía una gran variedad de juegos y actividades.</p>
+          </section>
+        </section>
+        <section class="portafolio-item">
+          <img src="https://nyupsite.com/assets/images/mbr-1-1900x1263.jpg" alt="" class="portafolio-img"/>
+          <section class="portafolio-text">
+            <h5>Nyupsite</h5>
+            <p>Empresa de Diseño web, Marketing y Social Media en un solo lugar.</p>
+          </section>
+        </section>
+        <section class="portafolio-item">
+          <img src="https://user-images.githubusercontent.com/32749673/64740929-d4435c00-d4ee-11e9-9b9f-f45236b8b61f.png" alt="" class="portafolio-img"/>
+          <section class="portafolio-text">
+            <h5>Houdini Asyncio</h5>
+            <p>Un servidor privado de Club Penguin escrito en Python 3.</p>
+          </section>
+        </section>
+      </div>
+    </section>
+  </section>
+  <div class="footer" id="contacto">
+    <h4 data-ix="slowfade-scroll-bigs">Contacto</h4>
+    <div class="container">
+    <form action="https://formsubmit.co/imnotkilian@gmail.com" method="post">
+      <ul class="flex-outer">
+        <li>
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" placeholder="Ingresa Nombre" class="rect" required>
+        </li>
+        <li>
+          <label for="correo">Correo</label>
+          <input type="email" name="correo" placeholder="Ingresa Correo" class="rect" required>
+        </li>
+        <li>
+          <label for="fono">Teléfono</label>
+          <input type="text" name="telefono" placeholder="Ingresa Teléfono" class="rect" required>
+        </li>
+        <li>
+          <label for="mensaje">Mensaje</label>
+          <textarea rows="6" name="mensaje" placeholder="INGRESA TU MENSAJE" class="rect" required></textarea>
+        </li>
+        <li class="center">
+          <button type="submit">Enviar</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+  </div>
+  <script>
+      $(document).ready(function(){
+  $('#slider').fadeIn('slow').delay(200);
+  $("#sticker").sticky({topSpacing:0});
+});
+
+//https://dribbble.com/shots/3581904-HEALTHEX-Day-01
+
+//SMOOTH SCROLL MENU
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {  
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+
+//FIXED MENU COLORS
+$(document).ready(function(){
+  $(window).trigger('scroll');
+  $(window).bind('scroll', function () {
+    var pixels = 50; //pixeles abajo
+    if ($(window).scrollTop() > pixels) {
+  $('.nav').addClass('fixed');
+      $('.menu a').css({"color":"#354757"});
+      $('.logo').css({"color":"#354757"});
+    } else {
+      $('.nav').removeClass('fixed');
+      $('.menu a').css({"color":"#BABCBD"});
+      $('.logo').css({"color":"#BABCBD"});
+    }
+  }); 
+}); 
+
+/*
+$(document).ready(function(){
+  $('a[href^="#"]').on('click',function (e){
+    e.preventDefault();
+    var target = this.hash;
+    var $target = $(target);
+    
+    //scroll con hash
+    $('html, body').animate({
+      'scrollTop': $target.offset().top
+    }, 1000, 'swing', function(){
+      window.location.hash = target;
+    });
+    
+   /* //scroll sin hash
+    $('html, body').animte({
+      'scrollTop': $targer.offset().top
+      }, 1000, 'swing');
+  });
+});*/
+  </script>
+  
+  
+  
+  
